@@ -1,0 +1,75 @@
+
+
+                                                        Overview of the Analysis
+
+In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+
+* Explain the purpose of the analysis.
+
+        The Analysis in in machine learning is essential for building, evaluating, and maintaining effective models that can provide valuable insights and precitions from the data.
+
+* Explain what financial information the data was on, and what you needed to predict.
+
+    The data was about the lending and includes the finacial information realted to the individuals applying for credit. This data includes
+
+    loan_size	interest_rate	borrower_income	debt_to_income	num_of_accounts	derogatory_marks	total_debt	loan_status
+
+    and we are going to predict the liklihood of an applicant defaulting on a loan. 
+
+
+
+* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
+
+        In Analysis, Variable (Value_counts) y,  75000 samples for our helathy loan applicants and 2500 for high risk loan applicants
+
+
+* Describe the stages of the machine learning process you went through as part of this analysis.
+    Step 1: Read the lending_data.csv data from the Resources folder into a Pandas DataFrame
+    Step 2: Create the labels set (y) from the “loan_status” column, and then create the features (X) DataFrame from the remaining columns.
+    Step 3: Split the data into training and testing datasets by using train_test_split.
+                            Create a Logistic Regression Model with the Original Data
+    Step 1: Fit a logistic regression model by using the training data (X_train and y_train).
+    Step 2: Save the predictions on the testing data labels by using the testing feature data (X_test) and the fitted model.
+    Step 3: Evaluate the model’s performance by doing the following:
+            Generate a confusion matrix.
+            Print the classification report.
+* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+
+I used the 'LogisticRegression' method for this analysis and'LogisticRegression' is a fundamental machine learning algorithm used for binary calssification task. Because it models the probablity of an input beloging to one of two classes (e.g,. 0 or 1) using logistic function.Key points about logistic Regression:
+1) Binary Classification
+2) Output Interpretation
+3) Sigmoid Function
+4) Model Coofficients
+5) Cost Finction
+6) Linear Decision boundary
+Logistic Regression is a simple effective algorthim and is often used as a baseline model for binary classification mdodels.
+
+## Results
+
+Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+
+* Machine Learning Model 1:
+  * Description of Model 1 Accuracy, Precision, and Recall scores.
+  
+  
+                   precision    recall  f1-score   support
+
+  healthy loan       1.00      0.99      1.00     18765
+high risk loan       0.85      0.91      0.88       619
+
+      accuracy                           0.99     19384
+
+. Overall accuracy is 99% in our Analysis. Score of 0.99 implies that the model is almost perfect at distinguishing between the two calsses, amking very few mistakes in classyfying both positive and negative instances.
+            
+. Precision for healthy Loan (1.00) menas that there are no false positives for healthy loans. this is very high level of confodence in the models accuracy for identifying healthy loans.The precision of 0.85 for high risk loans suggest that there is small percentage of healthy loans being misclassifified as high risk.
+. Recall for Healthy loans 0.99 indicates that the model correctly identifies 99% of all actual healthy loans.
+Recall for 0.91 suggest that the model captures a significant postion of high risk loans but still misses 9% of them.
+
+
+
+## Summary
+
+    Overall accuracy is 99%. and the recall is also 99% for healthy loans. however, model is not doing a very good job in predicting risky loan applicant beacuse the recall is 91% for risky loan. since we have more than 75000 samples for our helathy loan applicants compare to just 2500 for high risk loan applicants there could be an initail bias even a before we train the model towrds healthy loan.
+
+
+
